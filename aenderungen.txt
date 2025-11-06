@@ -1,1 +1,2 @@
 -befehle.txt kleine erklaerung hinzugefuegt
+-git-tipps erstellt und log zu README hinzugefuegt
