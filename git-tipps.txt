@@ -1,0 +1,71 @@
+To remove changes in Git before committing, you have several options depending on whether the changes are unstaged, staged, or both. Below are solutions for each scenario:
+Undo Changes in Working Directory (Unstaged)
+
+    To discard all local changes to tracked files, use:
+
+text
+git restore .
+
+For older Git versions, use:
+
+text
+git checkout -- .
+
+This restores the working directory to the last commit, deleting modifications to all tracked files.
+
+​
+
+To discard changes in a specific file:
+
+text
+git restore <file>
+
+Or for older versions:
+
+    text
+    git checkout -- <file>
+
+Undo Staged Changes
+
+    To unstage files you previously added to the staging area (with git add) but haven’t committed yet:
+
+text
+git restore --staged .
+
+Or, for older Git:
+
+text
+git reset
+
+This will move staged files back to unstaged without discarding the changes.
+
+    ​
+
+Completely Remove All Local Changes (Including Staged/Unstaged)
+
+    To undo all changes and reset your repository to the last commit, removing everything (dangerous and unrecoverable):
+
+text
+git reset --hard
+
+This discards all changes in the working directory and the staging area.
+
+    ​
+
+Handle Untracked Files
+
+    To remove untracked files (files not added to Git yet):
+
+text
+git clean -fd
+
+This deletes every untracked file, so use with caution.
+
+    ​
+
+Using Git Stash (Temporarily Save Changes)
+
+    You can also stash your changes if you want to remove them from working state but potentially reuse them later:
+
+text
+git stash
